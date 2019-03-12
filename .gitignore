@@ -1,5 +1,6 @@
 # Paths
 node_modules
+dist
 
 # Files
 .editorconfig
