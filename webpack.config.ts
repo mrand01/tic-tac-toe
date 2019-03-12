@@ -1,3 +1,5 @@
+import CleanWebpackPlugin from 'clean-webpack-plugin';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 import path from 'path';
 import webpack from 'webpack';
 
@@ -7,7 +9,7 @@ const config: webpack.Configuration = {
   },
   devtool: 'inline-source-map',
   entry: './src/index.ts',
-  mode: 'production',
+  mode: 'development',
   module: {
     rules: [
       {
@@ -21,8 +23,9 @@ const config: webpack.Configuration = {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
   },
+  plugins: [new CleanWebpackPlugin(), new HtmlWebpackPlugin({ title: 'Tic-Tac-Toe' })],
   resolve: {
-    extensions: ['.ts'],
+    extensions: ['.js', '.ts'],
   },
 };
 
