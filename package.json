@@ -32,5 +32,8 @@
     "singleQuote": true,
     "tabWidth": 2,
     "trailingComma": "all"
+  },
+  "dependencies": {
+    "tslib": "^1.9.3"
   }
 }
