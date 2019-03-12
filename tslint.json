@@ -1,0 +1,53 @@
+{
+    "extends": ["tslint:latest", "tslint-eslint-rules", "tslint-config-prettier"],
+    "rules": {
+      "member-ordering": [
+        true,
+        {
+          "order": [
+            "public-static-field",
+            "protected-static-field",
+            "private-static-field",
+            "public-instance-field",
+            "protected-instance-field",
+            "private-instance-field",
+            "public-constructor",
+            "protected-constructor",
+            "private-constructor",
+            "public-static-method",
+            "protected-static-method",
+            "private-static-method",
+            "public-instance-method",
+            "protected-instance-method",
+            "private-instance-method"
+          ],
+          "alphabetize": true
+        }
+      ],
+      "no-implicit-dependencies": [true, "dev"],
+      "ordered-imports": {
+        "options": {
+          "import-sources-order": "case-insensitive",
+          "grouped-imports": true,
+          "named-imports-order": "lowercase-last",
+          "module-source-path": "basename"
+        }
+      },
+      "prettier": true,
+      "typedef": [
+        true,
+        "call-signature",
+        "arrow-call-signature",
+        "parameter",
+        "arrow-parameter",
+        "property-declaration",
+        "variable-declaration",
+        "member-variable-declaration",
+        "object-destructuring",
+        "array-destructuring"
+      ],
+      "variable-name": [true, "check-format", "allow-leading-underscore"]
+    },
+    "rulesDirectory": ["tslint-plugin-prettier"]
+  }
+  

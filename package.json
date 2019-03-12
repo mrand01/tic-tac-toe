@@ -17,5 +17,20 @@
   "author": "Michael Randolph <mrand01@gmail.com> (https://github.com/mrand01)",
   "license": "MIT",
   "bugs": "https://github.com/mrand01/tic-tac-toe/issues",
-  "homepage": "https://github.com/mrand01/tic-tac-toe#readme"
+  "homepage": "https://github.com/mrand01/tic-tac-toe#readme",
+  "devDependencies": {
+    "prettier": "^1.16.4",
+    "tslint": "^5.13.1",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-eslint-rules": "^5.4.0",
+    "tslint-plugin-prettier": "^2.0.1",
+    "typescript": "^3.3.3333"
+  },
+  "prettier": {
+    "endOfLine": "lf",
+    "printWidth": 160,
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "all"
+  }
 }
