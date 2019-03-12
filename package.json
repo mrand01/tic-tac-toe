@@ -1,0 +1,21 @@
+{
+  "name": "tic-tac-toe",
+  "version": "1.0.0",
+  "description": "Tic-Tac-Toe",
+  "main": "",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/mrand01/tic-tac-toe.git"
+  },
+  "keywords": [
+    "Tic",
+    "Tac",
+    "Toe",
+    "Game"
+  ],
+  "author": "Michael Randolph <mrand01@gmail.com> (https://github.com/mrand01)",
+  "license": "MIT",
+  "bugs": "https://github.com/mrand01/tic-tac-toe/issues",
+  "homepage": "https://github.com/mrand01/tic-tac-toe#readme"
+}
