@@ -1,0 +1,6 @@
+# Paths
+node_modules
+
+# Files
+.editorconfig
+.DS_Store
