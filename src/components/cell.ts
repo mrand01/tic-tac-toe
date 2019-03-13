@@ -1,9 +1,24 @@
-export function Cell(index: number): HTMLDivElement {
-  const element: HTMLDivElement = document.createElement('div');
+export class Cell {
+  private _element: HTMLDivElement;
+  private _index: number;
 
-  element.classList.add('cell');
-  element.style.gridColumn = `col${index % 3}`;
-  element.style.gridRow = `row${Math.floor(index / 3)}`;
+  constructor(index: number) {
+    this._index = index;
+    this._element = this._buildElement();
+  }
 
-  return element;
+  private _buildElement(): HTMLDivElement {
+    const element: HTMLDivElement = document.createElement('div');
+
+    element.classList.add('cell', 'unselectable');
+    element.id = this._index.toString();
+    element.style.gridColumn = `col${this._index % 3}`;
+    element.style.gridRow = `row${Math.floor(this._index / 3)}`;
+
+    return element;
+  }
+
+  public get element(): HTMLDivElement {
+    return this._element;
+  }
 }

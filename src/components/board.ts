@@ -1,16 +1,27 @@
 import { Cell } from './cell';
 
-export function Board(): HTMLDivElement {
-  const state: any[] = new Array(9);
-  const element: HTMLDivElement = document.createElement('div');
+export class Board {
+  private _element: HTMLDivElement;
 
-  element.classList.add('board');
-
-  for (let i: number = 0; i < state.length; i++) {
-    const cell: HTMLDivElement = Cell(i);
-
-    element.appendChild(cell);
+  constructor() {
+    this._element = this._buildElement();
   }
 
-  return element;
+  private _buildElement(): HTMLDivElement {
+    const element: HTMLDivElement = document.createElement('div');
+
+    element.classList.add('board');
+
+    for (let i: number = 0; i < 9; i++) {
+      const cell: Cell = new Cell(i);
+
+      element.appendChild(cell.element);
+    }
+
+    return element;
+  }
+
+  public get element(): HTMLDivElement {
+    return this._element;
+  }
 }
