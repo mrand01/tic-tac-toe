@@ -1,9 +1,4 @@
-function component(): HTMLDivElement {
-  const element: HTMLDivElement = document.createElement('div');
+import { Board } from './components/board';
+import './index.css';
 
-  element.innerHTML = 'Test';
-
-  return element;
-}
-
-document.body.appendChild(component());
+document.body.appendChild(Board());
