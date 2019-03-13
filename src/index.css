@@ -1,0 +1,26 @@
+body {
+  font: bold 72px sans-serif;
+  margin: 20px;
+}
+
+.board {
+  background-color: black;
+  border: 1px solid black;
+  display: inline-grid;
+  grid-gap: 1px;
+  grid-template-columns: [col0] 100px [col1] 100px [col2] 100px;
+  grid-template-rows: [row0] 100px [row1] 100px [row2] 100px;
+}
+
+.cell {
+  background-color: white;
+  line-height: 100px;
+  text-align: center;
+}
+
+.unselectable {
+  user-select: none;
+  -moz-user-select: -moz-none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+}

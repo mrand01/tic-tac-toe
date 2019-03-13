@@ -1,9 +1,10 @@
-function component(): HTMLDivElement {
-  const element: HTMLDivElement = document.createElement('div');
+import { Board } from './components/board';
+import { BoardController } from './components/board-controller';
+import './index.css';
 
-  element.innerHTML = 'Test';
+const board: Board = new Board();
+const boardController: BoardController = new BoardController(board);
 
-  return element;
-}
+document.body.appendChild(board.element);
 
-document.body.appendChild(component());
+export default boardController;
