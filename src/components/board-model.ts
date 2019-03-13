@@ -1,12 +1,17 @@
-export class BoardModel {
-  private _nextPlayer: 'x' | 'o' = 'x';
-  private _state: Array<'x' | 'o'>;
+type TicTacSymbol = 'x' | 'o';
 
-  constructor() {
+export class BoardModel {
+  private _listener: (state: TicTacSymbol[]) => void;
+  private _nextPlayer: TicTacSymbol;
+  private _state: TicTacSymbol[];
+
+  constructor(listener: (state: TicTacSymbol[]) => void) {
+    this._listener = listener;
+    this._nextPlayer = 'x';
     this._state = new Array(9);
   }
 
-  public detectWinner(): 'x' | 'o' | undefined {
+  public detectWinner(): TicTacSymbol | undefined {
     const conditions: number[][] = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]];
 
     for (const condition of conditions) {
@@ -20,15 +25,19 @@ export class BoardModel {
     return undefined;
   }
 
-  public toggleNextPlayer(): void {
+  public reset(): void {
+    this._nextPlayer = 'x';
+    this._state = new Array(9);
+    this._listener(this._state);
+  }
+
+  public setState(index: number): void {
+    this._state[index] = this._nextPlayer;
+    this._toggleNextPlayer();
+    this._listener(this._state);
+  }
+
+  private _toggleNextPlayer(): void {
     this._nextPlayer = this._nextPlayer === 'x' ? 'o' : 'x';
-  }
-
-  public get nextPlayer(): 'x' | 'o' {
-    return this._nextPlayer;
-  }
-
-  public get state(): string[] {
-    return this._state;
   }
 }
