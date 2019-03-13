@@ -1,4 +1,4 @@
-type TicTacSymbol = 'x' | 'o';
+export type TicTacSymbol = 'x' | 'o';
 
 export class BoardModel {
   private _listener: (state: TicTacSymbol[]) => void;

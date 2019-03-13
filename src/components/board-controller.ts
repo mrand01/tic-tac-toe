@@ -1,5 +1,5 @@
 import { Board } from './board';
-import { BoardModel } from './board-model';
+import { BoardModel, TicTacSymbol } from './board-model';
 
 export class BoardController {
   private _model: BoardModel;
@@ -28,10 +28,11 @@ export class BoardController {
       cellElement.textContent = state[i] ? state[i] : '';
     }
 
-    const winner: 'x' | 'o' | undefined = this._model.detectWinner();
+    const winner: TicTacSymbol | undefined = this._model.detectWinner();
 
     if (winner) {
       const result: boolean = confirm(`${winner.toUpperCase()} WINS!  Click OK to restart.`);
+
       if (result) {
         this._model.reset();
       }
