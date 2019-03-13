@@ -1,2 +1,5 @@
 # tic-tac-toe
-Tic-Tac-Toe
+### Instructions
+* Clone this repository
+* Run `npm install`
+* Run `npm run start`
